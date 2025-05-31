@@ -225,12 +225,14 @@ $$\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} \left| y_i - \hat{y}_i \right|$$
 ### 2. **Root Mean Squared Error (RMSE)**
 RMSE mengukur akar dari rata-rata kuadrat kesalahan. Metrik ini memberikan penalti lebih besar terhadap kesalahan yang besar. RMSE yang rendah menandakan prediksi model mendekati nilai aktual secara konsisten.
 
-$$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 }$$
+$$
+\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 }$$
 
 ### 3. **R-squared (R² Score)**
 R² mengukur proporsi variansi target yang bisa dijelaskan oleh model. Skor berkisar dari 0 hingga 1.
 
-$$\text{R^2} = 1 - \frac{ \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }{ \sum_{i=1}^{n} (y_i - \bar{y})^2 }$$
+$$R^2 = 1 - \frac{ \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }{ \sum_{i=1}^{n} (y_i - \bar{y})^2 }$$
+
 
 - Nilai R² mendekati 1 → model sangat baik menjelaskan variansi data
 - Nilai R² < 0.5 → model masih kurang baik dalam menjelaskan variasi data.
