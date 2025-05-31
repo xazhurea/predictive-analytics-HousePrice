@@ -89,7 +89,7 @@ Tabel 2. Variabel dalam Dataset
 
 Setelah dilakukan pengecekan _missing value_ dan duplikasi data, dataset ini sudah cukup bersih dan tidak mengandung nilai hilang, sehingga dapat langsung dilakukan eksplorasi
 
-![Outlier (Data Numerik)](https://i.ibb.co/Z6d6RQgY/download.png)
+![download](https://github.com/user-attachments/assets/ee483b64-41ae-4658-8c5c-5135a70829a4)
 
 Gambar 1. Outlier Data Numerik 
 
@@ -98,12 +98,10 @@ Berdasarkan boxplot pada Gambar 1., atribut `price`  dan `area`  menunjukkan ada
 
 ### EDA - Univariate Analysis
 
-![Analisis Univariat (Data Kategori)](https://i.ibb.co/jZD0VRkV/download.png)
-
+![download](https://github.com/user-attachments/assets/5fa3d107-5fdd-4306-b3a2-d03b41badb23)
 Gambar 2a. Analisis Univariat (Data Kategori) 
 
-![Univariate Analysis](https://i.ibb.co/V2mQ2dK/EDA-Univariate.png)
-
+![download](https://github.com/user-attachments/assets/63c89186-cedb-4149-b003-5c3023b3ac34)
 Gambar 2b. Analisis Univariat (Data Numerik) 
 
  Berdasarkan _Gambar 2a_ , dapat dilihat bahwa:
@@ -119,15 +117,19 @@ Gambar 2b. Analisis Univariat (Data Numerik)
 
 ### EDA - Multivariate Analysis
 
-![Multivariate Analysis](https://i.ibb.co.com/GQQBPZps/Untitled.png)
+<img width="463" alt="Untitled" src="https://github.com/user-attachments/assets/7d56dbf5-7174-4f32-8d6c-1160caac720d" />
 Gambar 3a. Analisis Multivariat Kategorikal
 
-Pada _Gambar 3a_ memperlihatkan rata-rata harga relatif terhadap fitur-fitur kategori, yang dapat ditarik kesimpulan bahwa semakin tinggi harga barang artinya semakin banyak fasilitas yang tersedia, contohnya pada ftur basement, mainroad dll.
+Pada _Gambar 3a_ memperlihatkan rata-rata harga relatif terhadap fitur-fitur kategori, yang dapat ditarik kesimpulan bahwa 
+semakin tinggi harga barang artinya semakin banyak fasilitas yang tersedia, contohnya pada ftur basement, mainroad dll.
 
-![Multivariate Analysis](https://i.ibb.co.com/ynjWtbD3/download.png)
+
+
+![download](https://github.com/user-attachments/assets/4eacb2b7-4288-4fcb-b29b-0bbc7a2dbd3b)
 Gambar 3b. Analisis Multivariat Numerik
 
-![Multivariate Analysis](https://i.ibb.co.com/YBvvs6Bt/download.png)
+
+![download](https://github.com/user-attachments/assets/54f3e53a-06ab-4d03-b56b-aad433b6ff7b)
 Gambar 3c. Analisis Matriks Korelasi
 
 Analisis Multivariat_, dengan menggunakan fungsi _pairplot_ dari _library seaborn_, tampak terlihat relasi pasangan dalam dataset menunjukan pola acak. Pada _Gambar 3b_ fitur `area` berkorelasi positif dengan fitur `price` yang artinya semakin tinngi nilai `area` maka berbanding lurus dengan nilai `price`. Analisis Matriks Korelasi_, merupakan _Correlation Matrix_ menunjukkan hubungan antar fitur dalam nilai korelasi. Jika diamati, fitur  `area` memiliki skor korelasi yang cukup besar `0.54` dengan fitur target `price` .
@@ -153,9 +155,7 @@ Semua fitur numerik diskalakan menggunakan StandardScaler, yaitu mengubah data s
 Algoritma pada proyek ini melakukan pemodelan dengan 5 algoritma, yaitu:
 
 ### _K-Nearest Neighbors (KNN)_
-algoritma machine learning yang bekerja dengan menemukan k tetangga terdekat dari data baru dan kemudian menggunakan kategori atau nilai rata-rata dari tetangga tersebut untuk memprediksi nilai data baru. Adapun parameter yang digunakan pada proyek ini adalah:
--  `n_neighbors` jumlah tetangga terdekat.
-- `weight = distance` Tetangga yang lebih dekat memiliki pengaruh lebih besar.
+KNN Regressor adalah metode berbasis instance-based learning yang memprediksi nilai target dengan mengambil rata-rata dari k tetangga terdekat berdasarkan jarak (biasanya Euclidean). Model ini tidak membuat asumsi tentang bentuk hubungan antar variabel, sehingga cocok untuk data yang distribusinya tidak linier. Pada model ini digunakan parameter `n_neighbors=5`, yang berarti prediksi akan dihitung berdasarkan rata-rata dari 5 data poin terdekat. KNN sangat bergantung pada skala fitur dan sensitif terhadap noise, sehingga penting untuk melakukan normalisasi sebelum pelatihan.
 
 Keunggulan _KNN_ :
 - Dapat digunakan untuk klasifikasi dan regresi.
@@ -166,8 +166,7 @@ Kekurangan _KNN_ :
 - Membutuhkan banyak memori dan waktu komputasi untuk dataset besar. 
 
 ### _Random Forest_
-algoritma machine learning ensemble yang menggabungkan beberapa decision tree untuk meningkatkan akurasi prediksi. Algoritma ini bekerja dengan membuat banyak decision tree secara acak dan kemudian menggunakan voting untuk memprediksi kategori atau nilai data baru. Adapun parameter yang digunakan pada proyek ini adalah:
-- `max_depth` kedalaman maksimum.
+Random Forest adalah metode ensemble yang menggabungkan banyak decision tree untuk meningkatkan akurasi prediksi. Setiap pohon dalam random forest dilatih pada subset acak dari data dan subset acak dari fitur, sehingga mampu mengurangi overfitting dan meningkatkan generalisasi model. Hasil prediksi akhir diperoleh dengan mengambil rata-rata dari seluruh prediksi pohon-pohon tersebut. Pada model ini digunakan parameter `n_estimators=100`, yang berarti sebanyak 100 pohon decision tree dibangun untuk menghasilkan prediksi yang stabil dan akurat. Selain itu, parameter `random_state=42` digunakan untuk menetapkan seed pada proses pengacakan agar hasil pelatihan model tetap konsisten setiap kali dijalankan, sehingga memudahkan proses replikasi dan evaluasi.
 
 Keunggulan _Random Forest_ :
 - Mengurangi overfitting dibanding decision tree tunggal.
@@ -177,8 +176,9 @@ Kekurangan _Random Forest_ :
 - Sulit untuk interpretasi model.
 - Memerlukan sumber daya komputasi lebih besar.
 
-### _Support Vector Machine (SVM)_
-algoritma machine learning yang digunakan bekerja dengan menemukan hyperplane terbaik yang memaksimalkan margin antara data dalam ruang fitur. Untuk regresi digunakan SVR dengan kernel RBF. Parameter default digunakan dalam proyek ini.
+### _Support Vector Regression_
+SVR (Support Vector Regression) menggunakan beberapa parameter penting yang memengaruhi kinerjanya. Parameter `C=100` mengatur seberapa keras model mencoba memperbaiki kesalahan—nilai besar seperti 100 membuat model fokus mengurangi kesalahan, tapi berisiko overfitting. Parameter `gamma=0.1` menentukan seberapa jauh pengaruh setiap titik data terhadap prediksi; nilai 0.1 berarti pengaruhnya cukup lokal, hanya pada area sekitar titik tersebut. Sedangkan `epsilon=0.1` adalah batas toleransi kesalahan, yang berarti model tidak menghitung kesalahan jika prediksi meleset kurang dari 0.1. Nilai-nilai ini bersama-sama mengontrol keseimbangan antara akurasi dan kemampuan model menangkap pola dalam data.
+
  
 Keunggulan _Support Vector Machine (SVM)_ :
 - Efektif pada data berdimensi tinggi.
@@ -189,7 +189,7 @@ Kekurangan  _Support Vector Machine (SVM)_ :
 - Memerlukan waktu pelatihan yang cukup lama pada dataset besar.
 
 ### _Linear Regression_ 
-Model regresi linier yang mengasumsikan hubungan linear antara variabel independen dan dependen. Model ini berusaha meminimalkan jumlah kuadrat kesalahan prediksi.
+Linear Regression adalah metode regresi dasar yang digunakan untuk memodelkan hubungan linier antara variabel input (fitur) dan target. Model ini mencari garis lurus terbaik yang meminimalkan jumlah kuadrat dari selisih antara nilai prediksi dan nilai aktual. Pada inisialisasi model ini tidak diberikan parameter tambahan secara eksplisit, sehingga digunakan pengaturan default seperti fit_intercept=True, yang berarti model akan menghitung nilai intercept secara otomatis.
  
 Keunggulan _Linear Regression_:
 - Mudah diinterpretasikan.
@@ -200,7 +200,7 @@ Kekurangan _Linear Regression_:
 - Rentan terhadap multikolinearitas antar fitur.
 
 ### _Gradient Boosting_ 
-Algoritma ensemble yang membangun model secara bertahap dengan memperbaiki kesalahan model sebelumnya menggunakan boosting.
+Gradient Boosting adalah teknik ensemble yang membangun model secara bertahap, di mana setiap model baru bertujuan memperbaiki kesalahan dari model sebelumnya dengan meminimalkan fungsi loss. Model ini efektif dalam menangani data non-linear dan cenderung menghasilkan performa prediksi yang tinggi. Pada model ini digunakan parameter `n_estimators=100`, yang berarti 100 pohon dibangun secara bertahap. Parameter `learning_rate=0.1` menentukan kontribusi masing-masing pohon terhadap model akhir—semakin kecil nilainya, semakin halus pembelajaran tetapi membutuhkan lebih banyak pohon. `random_state=42` digunakan untuk memastikan hasil yang konsisten pada setiap proses pelatihan ulang model.
 
 keuntungan _Gradient Boosting_ :
 - Akurasi tinggi pada berbagai masalah regresi.
@@ -224,15 +224,11 @@ $$
 
 ### 2. **Root Mean Squared Error (RMSE)**
 RMSE mengukur akar dari rata-rata kuadrat kesalahan. Metrik ini memberikan penalti lebih besar terhadap kesalahan yang besar. RMSE yang rendah menandakan prediksi model mendekati nilai aktual secara konsisten.
-$$
-\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 }
-$$
+$$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 }$$
 
 ### 3. **R-squared (R² Score)**
 R² mengukur proporsi variansi target yang bisa dijelaskan oleh model. Skor berkisar dari 0 hingga 1.
-$$
-R^2 = 1 - \frac{ \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }{ \sum_{i=1}^{n} (y_i - \bar{y})^2 }
-$$
+$$R^2 = 1 - \frac{ \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }{ \sum_{i=1}^{n} (y_i - \bar{y})^2 }$$
 
 - Nilai R² mendekati 1 → model sangat baik menjelaskan variansi data
 - Nilai R² < 0.5 → model masih kurang baik dalam menjelaskan variasi data.
@@ -249,16 +245,11 @@ Berikut hasil evaluasi dari model yang dilatih:
 
 Tabel 3. Hasil Evaluasi
 
-![Plot Evaluasi](https://i.ibb.co.com/jvWt9thW/download.png)
 
+![download](https://github.com/user-attachments/assets/dd08b7a6-4ec5-438d-a894-593687c6169b)
 Gambar 3. Visualisasi Actual vs Predicted
 
 Berdasarkan Tabel 3 dan Gambar 3, dapat disimpulkan bahwa model dengan performa terbaik adalah Gradient Boosting Regressor, karena memiliki nilai MAE dan RMSE yang paling rendah, serta nilai R² Score yang paling tinggi (0.66) dibandingkan model lainnya. Hal ini menunjukkan bahwa Gradient Boosting mampu menjelaskan variasi data target dengan lebih baik.
-
-
-
-
-
 
 
 ## Referensi
