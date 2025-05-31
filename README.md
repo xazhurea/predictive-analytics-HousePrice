@@ -230,7 +230,9 @@ $$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)
 ### 3. **R-squared (R² Score)**
 R² mengukur proporsi variansi target yang bisa dijelaskan oleh model. Skor berkisar dari 0 hingga 1.
 
-$$R^2 = 1 - \frac{ \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }{ \sum_{i=1}^{n} (y_i - \bar{y})^2 }$$
+$$
+R^2 = 1 - \frac{ \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }{ \sum_{i=1}^{n} (y_i - \bar{y})^2 }
+$$
 
 - Nilai R² mendekati 1 → model sangat baik menjelaskan variansi data
 - Nilai R² < 0.5 → model masih kurang baik dalam menjelaskan variasi data.
