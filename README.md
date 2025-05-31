@@ -118,6 +118,7 @@ Gambar 2b. Analisis Univariat (Data Numerik)
 ### EDA - Multivariate Analysis
 
 <img width="463" alt="Untitled" src="https://github.com/user-attachments/assets/7d56dbf5-7174-4f32-8d6c-1160caac720d" />
+
 Gambar 3a. Analisis Multivariat Kategorikal
 
 Pada _Gambar 3a_ memperlihatkan rata-rata harga relatif terhadap fitur-fitur kategori, yang dapat ditarik kesimpulan bahwa 
@@ -218,16 +219,17 @@ Dalam tahap evaluasi, metrik yang digunakan adalah `MAE`, `RMSE` dan `R² Score`
 
 ### 1. **Mean Absolute Error (MAE)**
 MAE mengukur rata-rata selisih absolut antara nilai aktual dan prediksi. Metrik ini memberikan gambaran langsung seberapa besar kesalahan model secara umum. Semakin kecil MAE, semakin baik model dalam memprediksi.
-$$
-\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} \left| y_i - \hat{y}_i \right|
-$$
+
+$$\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} \left| y_i - \hat{y}_i \right|$$
 
 ### 2. **Root Mean Squared Error (RMSE)**
 RMSE mengukur akar dari rata-rata kuadrat kesalahan. Metrik ini memberikan penalti lebih besar terhadap kesalahan yang besar. RMSE yang rendah menandakan prediksi model mendekati nilai aktual secara konsisten.
+
 $$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2 }$$
 
 ### 3. **R-squared (R² Score)**
 R² mengukur proporsi variansi target yang bisa dijelaskan oleh model. Skor berkisar dari 0 hingga 1.
+
 $$R^2 = 1 - \frac{ \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }{ \sum_{i=1}^{n} (y_i - \bar{y})^2 }$$
 
 - Nilai R² mendekati 1 → model sangat baik menjelaskan variansi data
