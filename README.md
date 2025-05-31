@@ -231,8 +231,7 @@ $$
 ### 3. **R-squared (R² Score)**
 R² mengukur proporsi variansi target yang bisa dijelaskan oleh model. Skor berkisar dari 0 hingga 1.
 
-$$R^2 = 1 - \frac{ \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }{ \sum_{i=1}^{n} (y_i - \bar{y})^2 }$$
-
+![WhatsApp Image 2025-06-01 at 00 24 45_4fbce6ba](https://github.com/user-attachments/assets/671bdbfc-1421-4c31-94e3-534f1a311c8a)
 
 - Nilai R² mendekati 1 → model sangat baik menjelaskan variansi data
 - Nilai R² < 0.5 → model masih kurang baik dalam menjelaskan variasi data.
