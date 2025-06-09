@@ -63,8 +63,7 @@ Tabel 1. Isi Dataset
 Dilihat dari _Tabel 1. Isi Dataset_ dapat disimpulkan bahwa:
 - Dataset berupa CSV (Comma-Seperated Values).
 - Dataset memiliki 545  sample dengan 13 fitur.
-- Dataset memiliki 6 fitur bertipe float64 dan 7 fitur bertipe object.
-- Terdapat 1 missing value dalam dataset.
+- Dataset memiliki 6 fitur bertipe numerik dan 7 fitur bertipe kategorikal (object).
 
 ### Variable dalam dataset
 | Nama Variabel | Tipe Data   | Deskripsi |
@@ -178,6 +177,8 @@ Kekurangan _Random Forest_ :
 - Memerlukan sumber daya komputasi lebih besar.
 
 ### _Support Vector Regression_
+SVR digunakan untuk memprediksi nilai kontinu dengan cara mencari fungsi terbaik yang dapat memprediksi nilai target (output) dari sekumpulan fitur (input), sambil mempertahankan margin kesalahan dalam batas toleransi tertentu. 
+
 SVR (Support Vector Regression) menggunakan beberapa parameter penting yang memengaruhi kinerjanya. Parameter `C=100` mengatur seberapa keras model mencoba memperbaiki kesalahan—nilai besar seperti 100 membuat model fokus mengurangi kesalahan, tapi berisiko overfitting. Parameter `gamma=0.1` menentukan seberapa jauh pengaruh setiap titik data terhadap prediksi; nilai 0.1 berarti pengaruhnya cukup lokal, hanya pada area sekitar titik tersebut. Sedangkan `epsilon=0.1` adalah batas toleransi kesalahan, yang berarti model tidak menghitung kesalahan jika prediksi meleset kurang dari 0.1. Nilai-nilai ini bersama-sama mengontrol keseimbangan antara akurasi dan kemampuan model menangkap pola dalam data.
 
  
@@ -240,11 +241,11 @@ Berikut hasil evaluasi dari model yang dilatih:
 
 | Model | MAE | RMSE | R² Score |
 | ------ | ------ | ------ | ------ |
-| Gradient Boosting | 0.083555 | 0.112721 | 0.664659 |
-| Linear Regression  | 0.084821	| 0.115244 | 0.649475 |
-| SVR (RBF Kernel) | 0.086523 | 0.115991 | 0.644917 |
-| Random Forest | 0.088176 | 0.121048	 | 0.613282 |
-| KNN Regressor | 0.096125 | 0.137827 | 0.498643 |
+| Gradient Boosting | 0.091911 | 0.123993	 | 0.664659 |
+| Linear Regression  | 0.093303	| 0.126769 | 0.649475 |
+| SVR (RBF Kernel) | 0.094719 | 0.127101 | 0.644917 |
+| Random Forest | 0.097246 | 0.133366	 | 0.613282 |
+| KNN Regressor | 0.105524 | 0.151542 | 0.498643 |
 
 Tabel 3. Hasil Evaluasi
 
@@ -252,8 +253,14 @@ Tabel 3. Hasil Evaluasi
 ![download](https://github.com/user-attachments/assets/dd08b7a6-4ec5-438d-a894-593687c6169b)
 Gambar 3. Visualisasi Actual vs Predicted
 
-Berdasarkan Tabel 3 dan Gambar 3, dapat disimpulkan bahwa model dengan performa terbaik adalah Gradient Boosting Regressor, karena memiliki nilai MAE dan RMSE yang paling rendah, serta nilai R² Score yang paling tinggi (0.66) dibandingkan model lainnya. Hal ini menunjukkan bahwa Gradient Boosting mampu menjelaskan variasi data target dengan lebih baik.
+Berdasarkan Tabel 3 dan Gambar 3, dapat disimpulkan bahwa model dengan performa terbaik adalah Gradient Boosting, karena memiliki nilai MAE dan RMSE yang paling rendah, serta nilai R² Score yang paling tinggi (0.66) dibandingkan model lainnya. Hal ini menunjukkan bahwa Gradient Boosting mampu menjelaskan variasi data target dengan lebih baik.
 
+
+
+![download](https://github.com/user-attachments/assets/c2681291-110b-46f0-b000-b7b5c9d9ed37)
+Gambar 4. Visualisasi Feature Importance 
+
+Visualisasi pada Gambar 4 dilakukan feature importance pada algoritma Gradient Boosting-dimana merupakan model terbaik, menunjukkan bahwa fitur yang paling memengaruhi prediksi harga rumah area (luas bangunan) dengan skor importance tertinggi (lebih dari 0.4). Semakin luas rumah, semakin tinggi pula prediksinya. Selanjutnya disusul bathrooms (jumlah kamar mandi) yang menunjukkan bahwa kenyamanan fasilitas sangat dipertimbangkan dalam penilaian harga.
 
 ## Referensi
 1. M. Yazdani, "Machine Learning, Deep Learning, and Hedonic Methods for Real Estate Price Prediction," arXiv preprint arXiv:2110.07151, 2021. [Online]. Tersedia: https://arxiv.org/abs/2110.07151
